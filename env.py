@@ -1,1 +1,0 @@
-KEY = "Hello World"
