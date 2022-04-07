@@ -8,7 +8,7 @@ app.secret_key = KEY
 @app.route('/')
 def index():
   all = User.get_all()
-  return render_template("index.html", users = all)
+  return render_template("index.html", all = all)
 
 @app.route('/user/new')
 def new():
