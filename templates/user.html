@@ -11,28 +11,19 @@
 <title>Title</title>
 </head>
 <body>
-  <h1>All Users</h1>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Created At</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for user in all %}
-        <tr>
-          <td>{{user.id}}</td>
-          <td>{{user.first_name}} {{user.last_name}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.created_at}}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-<a href="/user/create"><h3>Create New User</h3></a>
+  <div class="container">
+    <form action="/user/create" method="POST"></form>
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name" id="first_name">
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" id="last_name">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email">
+      <button>Submit</button>
+    </div>
+  </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
