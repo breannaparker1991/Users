@@ -19,16 +19,22 @@
           <th>Full Name</th>
           <th>Email</th>
           <th>Created At</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         {% for user in all %}
-          <tr>
-            <td>{{user.id}}</td>
-            <td>{{user.first_name}} {{user.last_name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.created_at}}</td>
-          </tr>
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.first_name}} {{user.last_name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.created_at}}</td>
+          <td>
+            <a href="/user/edit/{{user.id}}" class="border-right border-dark">Edit</a>
+            <a href="/user/show/{{user.id}}" class="border-right border-dark">Show</a>
+            <a href="/user/delete/{{user.id}}">Delete</a>
+          </td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
