@@ -30,9 +30,9 @@ class User:
   
   @classmethod
   def get_one(cls,data):
-    query = "SELECT * FROM users WHERE id = %(is)s"
+    query = "SELECT * FROM users WHERE id = %(id)s"
     result = connectToMySQL(cls.db).query_db(query,data)
-    return result
+    return cls(result[0])
   
   @classmethod
   def update(cls,data):
@@ -41,5 +41,5 @@ class User:
   
   @classmethod
   def delete(cls,data):
-    query = "DELETE FROM users WHERE id = %(is)s"
+    query = "DELETE FROM users WHERE id = %(id)s"
     return connectToMySQL(cls.db).query_db(query,data)
