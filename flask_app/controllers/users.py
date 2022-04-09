@@ -1,6 +1,5 @@
 from flask_app import app
 from flask import Flask, redirect, request, render_template 
-from env import KEY
 from flask_app.models.user import User
 
 @app.route('/')
