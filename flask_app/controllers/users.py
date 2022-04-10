@@ -37,12 +37,12 @@ def update():
   User.update(request.form)
   return redirect('/user')
   
-app.route('/user/delete/<int:id>')
+@app.route('/user/delete/<int:id>')
 def delete(id):
   data = { 
       'id': id
       }
-  User.destory(data)
+  User.delete(data)
   return redirect ('/user')
 
 @app.route('/user/show/<int:id>')
